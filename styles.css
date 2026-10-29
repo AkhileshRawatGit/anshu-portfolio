@@ -1,0 +1,144 @@
+/* Modern Minimal & Premium Light Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --bg-primary: #fafafa;
+  --bg-card: #ffffff;
+  --border-subtle: #e4e4e7;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
+  --text-main: #09090b;
+  --text-muted: #52525b;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+/* Custom scrollbar for sleek minimalist look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Subtle background dot pattern for premium texture */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* Glassmorphism navigation and elements */
+.glass-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(228, 228, 231, 0.7);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e4e4e7;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.07), 0 4px 10px -4px rgba(0, 0, 0, 0.03);
+  transform: translateY(-3px);
+}
+
+/* Pulse animation for live status badge */
+@keyframes status-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.15);
+  }
+}
+
+.status-indicator {
+  animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Project preview zoom effect on hover */
+.project-card:hover .project-img {
+  transform: scale(1.04);
+}
+
+.project-img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Monospace tags */
+.font-mono-tag {
+  font-family: var(--font-mono);
+}
+
+/* Modal animation */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content-panel {
+  transform: scale(0.96) translateY(12px);
+  opacity: 0;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active .modal-content-panel {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Active navigation pill styling */
+.nav-link.active {
+  color: #09090b;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #09090b;
+  border-radius: 9999px;
+}
+
+/* Toast alert notification */
+#toast-notification {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}

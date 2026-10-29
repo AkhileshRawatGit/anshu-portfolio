@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera | Full Stack Software Engineer Intern</title>
+  <meta name="description" content="Portfolio of Alex Rivera, Full Stack Developer & CS Undergrad seeking 2026 Software Engineering Internships. Clean code, scalable systems, and modern web applications.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-50 text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white relative min-h-screen flex flex-col justify-between bg-grid-pattern">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-header transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo / Name -->
+      <a href="#hero" class="flex items-center gap-2.5 text-zinc-900 group">
+        <span class="w-8 h-8 rounded-lg bg-zinc-900 text-white font-mono flex items-center justify-center font-bold text-sm tracking-tighter group-hover:scale-105 transition-transform">
+          AR
+        </span>
+        <span class="font-semibold tracking-tight text-zinc-900 text-base">
+          Alex Rivera
+          <span class="text-xs ml-1.5 px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-600 font-normal border border-zinc-200">Full Stack</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+        <a href="#hero" class="nav-link hover:text-zinc-900 transition-colors">Home</a>
+        <a href="#about" class="nav-link hover:text-zinc-900 transition-colors">About</a>
+        <a href="#skills" class="nav-link hover:text-zinc-900 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link hover:text-zinc-900 transition-colors">Projects</a>
+        <a href="#contact" class="nav-link hover:text-zinc-900 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <button type="button" class="open-resume-btn flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg border border-zinc-200 bg-white hover:bg-zinc-100 text-zinc-800 shadow-sm transition-all hover:border-zinc-300">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-zinc-600"></i>
+          <span>Resume</span>
+        </button>
+        <a href="#contact" class="flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white shadow-sm transition-all">
+          <span>Hire Me</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-200 bg-white/95 backdrop-blur-md px-6 py-4 shadow-lg">
+      <div class="flex flex-col gap-3 font-medium text-sm text-zinc-700">
+        <a href="#hero" class="mobile-nav-link py-2 hover:text-zinc-900">Home</a>
+        <a href="#about" class="mobile-nav-link py-2 hover:text-zinc-900">About</a>
+        <a href="#skills" class="mobile-nav-link py-2 hover:text-zinc-900">Skills</a>
+        <a href="#projects" class="mobile-nav-link py-2 hover:text-zinc-900">Projects</a>
+        <a href="#contact" class="mobile-nav-link py-2 hover:text-zinc-900">Contact</a>
+        <div class="pt-3 border-t border-zinc-100 flex flex-col gap-2">
+          <button type="button" class="open-resume-btn w-full flex items-center justify-center gap-2 py-2 rounded-lg border border-zinc-200 text-xs font-semibold text-zinc-800">
+            <i data-lucide="file-text" class="w-4 h-4"></i> View Resume
+          </button>
+          <a href="#contact" class="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-zinc-900 text-xs font-semibold text-white">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column: Copy & Recruiter Value Prop -->
+          <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+            
+            <!-- Live Availability Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-medium shadow-sm">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="status-indicator absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+              </span>
+              <span>Available for Summer & Fall 2026 Internships</span>
+              <span class="text-zinc-300">|</span>
+              <span class="text-zinc-600 font-normal">Remote / Relocation</span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="space-y-3">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.12]">
+                Building clean, high-impact <span class="underline decoration-zinc-300 decoration-wavy decoration-2 underline-offset-8">full stack</span> web systems.
+              </h1>
+              <p class="text-lg sm:text-xl text-zinc-600 leading-relaxed font-normal max-w-xl">
+                Hi, I'm <strong class="font-semibold text-zinc-900">Alex Rivera</strong> — Computer Science student passionate about crafting scalable backend APIs, intuitive React interfaces, and production-ready architectures.
+              </p>
+            </div>
+
+            <!-- Recruiter Quick Facts Pill Row -->
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-zinc-200/90 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center shrink-0 text-zinc-700">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">Education</div>
+                  <div class="text-xs font-bold text-zinc-800">B.S. CS • 3.9 GPA</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-zinc-200/90 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center shrink-0 text-zinc-700">
+                  <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">Core Stack</div>
+                  <div class="text-xs font-bold text-zinc-800">React • Node • TS • SQL</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-zinc-200/90 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center shrink-0 text-zinc-700">
+                  <i data-lucide="rocket" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">Track Record</div>
+                  <div class="text-xs font-bold text-zinc-800">3 Apps • 1K+ Users</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Action Row -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-2">
+              <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-semibold shadow-md transition-all">
+                <span>Explore Featured Projects</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+
+              <button type="button" class="open-resume-btn inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white hover:bg-zinc-100 border border-zinc-200 text-zinc-800 text-sm font-semibold shadow-sm transition-all hover:border-zinc-300">
+                <i data-lucide="eye" class="w-4 h-4 text-zinc-600"></i>
+                <span>One-Click Resume</span>
+              </button>
+
+              <button id="copy-email-btn" type="button" title="Copy Email to Clipboard" class="inline-flex items-center gap-2 px-3.5 py-3 rounded-xl bg-white hover:bg-zinc-100 border border-zinc-200 text-zinc-700 text-sm font-medium shadow-sm transition-all">
+                <i data-lucide="copy" class="w-4 h-4 text-zinc-500"></i>
+                <span class="hidden sm:inline">Copy Email</span>
+              </button>
+            </div>
+
+            <!-- Social Links / Quick Trust -->
+            <div class="flex items-center gap-4 text-sm text-zinc-500 pt-1">
+              <span class="text-xs uppercase tracking-wider font-semibold text-zinc-400">Links:</span>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 flex items-center gap-1.5 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub</span>
+              </a>
+              <span class="text-zinc-300">•</span>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 flex items-center gap-1.5 transition-colors">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <span>LinkedIn</span>
+              </a>
+              <span class="text-zinc-300">•</span>
+              <a href="mailto:alex.rivera.dev@email.com" class="hover:text-zinc-900 flex items-center gap-1.5 transition-colors">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>alex.rivera.dev@email.com</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Developer Visual Card & Floating Tech Indicators -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-full max-w-sm sm:max-w-md">
+              
+              <!-- Subtle decorative backdrop card -->
+              <div class="absolute -inset-2 bg-gradient-to-tr from-zinc-200 to-zinc-100 rounded-3xl transform rotate-1 scale-[0.99] -z-10 border border-zinc-200"></div>
+
+              <!-- Main Card Container -->
+              <div class="bg-white p-5 rounded-2xl border border-zinc-200 shadow-xl overflow-hidden relative">
+                
+                <!-- Portrait Image -->
+                <div class="relative aspect-square w-full rounded-xl overflow-hidden bg-zinc-100 border border-zinc-100">
+                  <img src="assets/avatar.jpg" alt="Alex Rivera - Full Stack Developer" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                  
+                  <!-- Tag over image -->
+                  <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-lg border border-zinc-200/90 shadow-sm flex items-center justify-between">
+                    <div>
+                      <div class="text-xs font-bold text-zinc-900">Alex Rivera</div>
+                      <div class="text-[11px] text-zinc-500 font-mono-tag">Class of 2026 • SWE Candidate</div>
+                    </div>
+                    <div class="h-2 w-2 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+                  </div>
+                </div>
+
+                <!-- Snapshot stats below image -->
+                <div class="mt-4 pt-3 border-t border-zinc-100 grid grid-cols-2 gap-2 text-center text-xs">
+                  <div class="p-2 rounded-lg bg-zinc-50 border border-zinc-100">
+                    <span class="text-zinc-500 block text-[10px] uppercase font-semibold">Specialization</span>
+                    <span class="font-bold text-zinc-800">React & Node.js</span>
+                  </div>
+                  <div class="p-2 rounded-lg bg-zinc-50 border border-zinc-100">
+                    <span class="text-zinc-500 block text-[10px] uppercase font-semibold">Ready for</span>
+                    <span class="font-bold text-zinc-800">Immediate Impact</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Floating Micro-Badge: TypeScript -->
+              <div class="hidden sm:flex absolute -top-3 -right-3 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 shadow-md items-center gap-2">
+                <span class="w-5 h-5 rounded bg-blue-600 text-white font-mono text-[10px] flex items-center justify-center font-bold">TS</span>
+                <span class="text-xs font-semibold text-zinc-800">Strict TypeScript</span>
+              </div>
+
+              <!-- Floating Micro-Badge: PostgreSQL / APIs -->
+              <div class="hidden sm:flex absolute -bottom-3 -left-3 bg-white px-3 py-1.5 rounded-xl border border-zinc-200 shadow-md items-center gap-2">
+                <i data-lucide="database" class="w-4 h-4 text-emerald-600"></i>
+                <span class="text-xs font-semibold text-zinc-800">PostgreSQL & REST/GraphQL</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-20 bg-white border-y border-zinc-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col items-start max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2">
+            <span class="w-2 h-2 rounded-full bg-zinc-900"></span>
+            About Candidate
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+            Why I'll make a high-performing intern on your team
+          </h2>
+          <p class="mt-3 text-zinc-600 text-base leading-relaxed">
+            I don't just write code that passes tests in a tutorial. I focus on building production-grade web systems with clean architecture, strict typing, and quantifiable user impact.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Narrative & Strengths -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="glass-card p-6 rounded-2xl">
+              <h3 class="text-lg font-bold text-zinc-900 flex items-center gap-2 mb-3">
+                <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+                Fast Ramp-Up & High Autonomy
+              </h3>
+              <p class="text-zinc-600 text-sm leading-relaxed">
+                Whether diving into an unfamiliar legacy codebase or adopting cutting-edge frameworks, I excel at reading documentation, tracing data flows, and shipping reliable PRs quickly with minimal hand-holding.
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <h3 class="text-lg font-bold text-zinc-900 flex items-center gap-2 mb-3">
+                <i data-lucide="layers" class="w-5 h-5 text-blue-600"></i>
+                End-to-End Full Stack Perspective
+              </h3>
+              <p class="text-zinc-600 text-sm leading-relaxed">
+                I understand both sides of the wire: crafting pixel-perfect, accessible, and snappy frontends in React & Tailwind, paired with robust backend services, indexed database schemas, and resilient error handling.
+              </p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+              <h3 class="text-lg font-bold text-zinc-900 flex items-center gap-2 mb-3">
+                <i data-lucide="check-check" class="w-5 h-5 text-emerald-600"></i>
+                Commitment to Engineering Quality
+              </h3>
+              <p class="text-zinc-600 text-sm leading-relaxed">
+                I prioritize maintainability: self-documenting code, type safety with TypeScript, comprehensive unit/integration test coverage, and clear Git commit histories that simplify peer reviews.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Academic & Quick Profile Sidebar -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <!-- Education Box -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-zinc-500">Academic Background</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold font-mono-tag">3.9 / 4.0 GPA</span>
+              </div>
+
+              <h4 class="text-base font-bold text-zinc-900">B.S. in Computer Science</h4>
+              <p class="text-xs text-zinc-600 mt-0.5">State University • Expected Graduation: May 2026</p>
+              
+              <div class="mt-4 pt-4 border-t border-zinc-200">
+                <span class="text-xs font-semibold text-zinc-700 block mb-2">Relevant Coursework:</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Data Structures & Algos</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Database Systems</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Operating Systems</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Computer Networks</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Software Architecture</span>
+                  <span class="px-2.5 py-1 text-xs rounded-md bg-white border border-zinc-200 text-zinc-700">Distributed Systems</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-500">
+                <span>Dean's Honor List (All Semesters)</span>
+                <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
+              </div>
+            </div>
+
+            <!-- What I am seeking -->
+            <div class="bg-zinc-900 text-white rounded-2xl p-6 shadow-md">
+              <div class="flex items-center gap-2 text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">
+                <i data-lucide="compass" class="w-4 h-4 text-blue-400"></i>
+                Target Roles
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Summer / Fall 2026 SWE Internships</h4>
+              <p class="text-zinc-300 text-xs leading-relaxed">
+                Looking for teams solving hard engineering challenges where I can contribute to production features, receive mentorship from senior engineers, and build lasting value.
+              </p>
+              <div class="mt-4 pt-4 border-t border-zinc-800 flex items-center justify-between">
+                <span class="text-xs text-zinc-400">Available: May 2026 – Dec 2026</span>
+                <button type="button" class="open-resume-btn text-xs font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-4">
+                  View Full CV &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-zinc-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col items-start max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2">
+            <span class="w-2 h-2 rounded-full bg-zinc-900"></span>
+            Technical Competencies
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+            Skills built through hands-on shipping
+          </h2>
+          <p class="mt-3 text-zinc-600 text-base leading-relaxed">
+            Categorized for rapid recruiter evaluation. Every tool listed below has been implemented in actual working software or academic systems.
+          </p>
+        </div>
+
+        <!-- 4 Clear Competency Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Frontend -->
+          <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-4">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-zinc-900">Frontend Engineering</h3>
+            <p class="text-xs text-zinc-500 mt-1 mb-4">Responsive, accessible & performant user interfaces.</p>
+
+            <ul class="space-y-2.5 text-xs">
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">React & Next.js 14</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Advanced</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">TypeScript / JS (ES6+)</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Strict Type</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Tailwind CSS & CSS3</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Responsive</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">State: Zustand / Redux</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Global State</span>
+              </li>
+              <li class="flex items-center justify-between py-1">
+                <span class="font-medium text-zinc-800">HTML5 Semantic & a11y</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">WCAG 2.1</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Backend & APIs -->
+          <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-zinc-900">Backend & APIs</h3>
+            <p class="text-xs text-zinc-500 mt-1 mb-4">Scalable endpoints, authentication & background jobs.</p>
+
+            <ul class="space-y-2.5 text-xs">
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Node.js & Express</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">REST APIs</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Python & FastAPI</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Async APIs</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">WebSockets & Socket.io</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Real-time</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">JWT & OAuth 2.0</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Secure Auth</span>
+              </li>
+              <li class="flex items-center justify-between py-1">
+                <span class="font-medium text-zinc-800">GraphQL & Apollo</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Queries</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-4">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-zinc-900">Data & Persistence</h3>
+            <p class="text-xs text-zinc-500 mt-1 mb-4">Schema design, query optimization & caching.</p>
+
+            <ul class="space-y-2.5 text-xs">
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">PostgreSQL</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Relational & ACID</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Redis</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Caching & Queues</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">MongoDB</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">NoSQL</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Prisma ORM / Mongoose</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Type-safe DB</span>
+              </li>
+              <li class="flex items-center justify-between py-1">
+                <span class="font-medium text-zinc-800">Supabase & AWS S3</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Cloud Storage</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 4: DevOps & Engineering Practices -->
+          <div class="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-4">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-zinc-900">Tools & Workflow</h3>
+            <p class="text-xs text-zinc-500 mt-1 mb-4">Production tooling, testing & deployment pipelines.</p>
+
+            <ul class="space-y-2.5 text-xs">
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Git & GitHub Flow</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Clean PRs</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Docker & Containers</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Local & Prod</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">GitHub Actions CI/CD</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Automated Build</span>
+              </li>
+              <li class="flex items-center justify-between py-1 border-b border-zinc-100">
+                <span class="font-medium text-zinc-800">Jest & RTL</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Unit Tests</span>
+              </li>
+              <li class="flex items-center justify-between py-1">
+                <span class="font-medium text-zinc-800">Linux / Shell Scripting</span>
+                <span class="font-mono-tag text-zinc-500 text-[11px]">Bash CLI</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (RECRUITER CENTERPIECE) -->
+    <section id="projects" class="py-20 bg-white border-t border-zinc-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Category Filter Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div class="max-w-xl">
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2">
+              <span class="w-2 h-2 rounded-full bg-zinc-900"></span>
+              Portfolio Work
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              Featured Software Engineering Projects
+            </h2>
+            <p class="mt-2 text-zinc-600 text-sm">
+              Each project demonstrates real architecture, measurable technical impact, and production practices. Click <em>View Deep Dive</em> for architectural breakdowns.
+            </p>
+          </div>
+
+          <!-- Category Buttons -->
+          <div class="inline-flex p-1 rounded-xl bg-zinc-100 border border-zinc-200 shrink-0">
+            <button type="button" data-category="all" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white shadow-sm transition-all">
+              All Projects (4)
+            </button>
+            <button type="button" data-category="fullstack" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-600 hover:bg-zinc-200/60 transition-all">
+              Full Stack (2)
+            </button>
+            <button type="button" data-category="backend" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-zinc-600 hover:bg-zinc-200/60 transition-all">
+              Distributed / Backend (2)
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- PROJECT 1: CodePulse AI -->
+          <article data-category="fullstack" class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-zinc-200">
+            <div>
+              <!-- Image Banner with zoom -->
+              <div class="relative h-60 overflow-hidden bg-zinc-100 border-b border-zinc-200">
+                <img src="assets/project-codepulse.jpg" alt="CodePulse AI Preview" class="project-img w-full h-full object-cover">
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-zinc-800 border border-zinc-200 shadow-sm flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                  Full Stack • AI & AST
+                </div>
+                <div class="absolute top-3 right-3 flex items-center gap-1.5">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="View Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="Live Preview">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h3 class="text-xl font-bold text-zinc-900">CodePulse AI</h3>
+                  <span class="font-mono-tag text-xs font-medium text-emerald-600">-40% PR Cycle Time</span>
+                </div>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-4">
+                  Intelligent static analysis platform that parses pull requests, detects code smells, and tracks engineering velocity with tree-sitter AST parsing and asynchronous background queues.
+                </p>
+
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-zinc-50 border border-zinc-100 rounded-xl mb-4 text-center">
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Analyzed</div>
+                    <div class="text-xs font-bold text-zinc-800">1,200+ Repos</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">LLM Cost Cut</div>
+                    <div class="text-xs font-bold text-emerald-600">-62% Token Use</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Speed</div>
+                    <div class="text-xs font-bold text-zinc-800">Async Workers</div>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Next.js 14</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">TypeScript</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Node.js</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">PostgreSQL</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action Button -->
+            <div class="px-6 pb-6 pt-0">
+              <button type="button" data-project-id="codepulse" class="view-project-details w-full py-2.5 px-4 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>View Architecture & Engineering Deep Dive</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: PaymentFlow Engine -->
+          <article data-category="backend" class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-zinc-200">
+            <div>
+              <!-- Image Banner with zoom -->
+              <div class="relative h-60 overflow-hidden bg-zinc-100 border-b border-zinc-200">
+                <img src="assets/project-paymentflow.jpg" alt="PaymentFlow Engine Preview" class="project-img w-full h-full object-cover">
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-zinc-800 border border-zinc-200 shadow-sm flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Distributed Backend • FinTech
+                </div>
+                <div class="absolute top-3 right-3 flex items-center gap-1.5">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="View Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="Live Preview">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h3 class="text-xl font-bold text-zinc-900">PaymentFlow Engine</h3>
+                  <span class="font-mono-tag text-xs font-medium text-emerald-600">3,500 req/sec</span>
+                </div>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-4">
+                  High-throughput payment settlement engine with strict idempotency guarantees, atomic Redis distributed locking, and automatic webhook reconciliations.
+                </p>
+
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-zinc-50 border border-zinc-100 rounded-xl mb-4 text-center">
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Latency</div>
+                    <div class="text-xs font-bold text-zinc-800">&lt; 75ms p99</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Reliability</div>
+                    <div class="text-xs font-bold text-emerald-600">Zero Duplicates</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Locks</div>
+                    <div class="text-xs font-bold text-zinc-800">Redis Redlock</div>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Express.js</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">TypeScript</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Redis</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">PostgreSQL</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Stripe SDK</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action Button -->
+            <div class="px-6 pb-6 pt-0">
+              <button type="button" data-project-id="paymentflow" class="view-project-details w-full py-2.5 px-4 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-600"></i>
+                <span>View Architecture & Engineering Deep Dive</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: SprintSync Workspace -->
+          <article data-category="fullstack" class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-zinc-200">
+            <div>
+              <!-- Image Banner with zoom -->
+              <div class="relative h-60 overflow-hidden bg-zinc-100 border-b border-zinc-200">
+                <img src="assets/project-sprintsync.jpg" alt="SprintSync Workspace Preview" class="project-img w-full h-full object-cover">
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-zinc-800 border border-zinc-200 shadow-sm flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                  Full Stack • Real-time WebSockets
+                </div>
+                <div class="absolute top-3 right-3 flex items-center gap-1.5">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="View Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="Live Preview">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h3 class="text-xl font-bold text-zinc-900">SprintSync Workspace</h3>
+                  <span class="font-mono-tag text-xs font-medium text-emerald-600">&lt; 25ms WebSocket</span>
+                </div>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-4">
+                  Collaborative agile workspace combining a dynamic Kanban board with live interactive markdown documentation powered by CRDT conflict resolution.
+                </p>
+
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-zinc-50 border border-zinc-100 rounded-xl mb-4 text-center">
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Connections</div>
+                    <div class="text-xs font-bold text-zinc-800">5,000+ Concurrent</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Conflict Sync</div>
+                    <div class="text-xs font-bold text-emerald-600">CRDT Engine</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Optimistic UI</div>
+                    <div class="text-xs font-bold text-zinc-800">Instant Rollback</div>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">React</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Socket.io</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Node.js</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">MongoDB</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Zustand</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action Button -->
+            <div class="px-6 pb-6 pt-0">
+              <button type="button" data-project-id="sprintsync" class="view-project-details w-full py-2.5 px-4 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-purple-600"></i>
+                <span>View Architecture & Engineering Deep Dive</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: CloudPulse CLI & Task Queue -->
+          <article data-category="backend" class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-zinc-200">
+            <div>
+              <!-- Image Banner with zoom -->
+              <div class="relative h-60 overflow-hidden bg-zinc-100 border-b border-zinc-200">
+                <img src="assets/project-codepulse.jpg" alt="CloudPulse Daemon Preview" class="project-img w-full h-full object-cover">
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-zinc-800 border border-zinc-200 shadow-sm flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                  Systems & CLI • Distributed Workers
+                </div>
+                <div class="absolute top-3 right-3 flex items-center gap-1.5">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="View Source Code">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-white/90 backdrop-blur-md text-zinc-700 hover:text-zinc-900 hover:bg-white shadow-sm transition-all" title="Live Preview">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6">
+                <div class="flex items-baseline justify-between mb-2">
+                  <h3 class="text-xl font-bold text-zinc-900">CloudPulse Daemon & CLI</h3>
+                  <span class="font-mono-tag text-xs font-medium text-emerald-600">500K+ Jobs / Day</span>
+                </div>
+                <p class="text-zinc-600 text-sm leading-relaxed mb-4">
+                  Developer-first background worker framework with automatic retries, dead-letter queue routing, real-time CLI terminal progress, and Dockerized worker nodes.
+                </p>
+
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-zinc-50 border border-zinc-100 rounded-xl mb-4 text-center">
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Memory</div>
+                    <div class="text-xs font-bold text-zinc-800">&lt; 35MB RAM</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">Heartbeat</div>
+                    <div class="text-xs font-bold text-emerald-600">1s Recovery</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-zinc-500 uppercase font-semibold">CI/CD</div>
+                    <div class="text-xs font-bold text-zinc-800">GitHub Actions</div>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Go</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Node.js CLI</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">Docker</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">RabbitMQ</span>
+                  <span class="px-2 py-0.5 text-[11px] font-mono-tag rounded bg-zinc-100 text-zinc-700 border border-zinc-200">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action Button -->
+            <div class="px-6 pb-6 pt-0">
+              <button type="button" data-project-id="taskmatrix" class="view-project-details w-full py-2.5 px-4 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-white hover:bg-zinc-50 text-zinc-800 text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>View Architecture & Engineering Deep Dive</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT & RECRUITER CTA SECTION -->
+    <section id="contact" class="py-20 bg-zinc-50 border-t border-zinc-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column: Recruiter Direct Info -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Recruiter Quick Reach
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              Let's talk about 2026 internship opportunities
+            </h2>
+            <p class="text-zinc-600 text-sm leading-relaxed">
+              I am actively interviewing for <strong>Summer & Fall 2026 Software Engineer Intern</strong> positions. Feel free to send a message, request my official transcript, or schedule an introductory screen.
+            </p>
+
+            <div class="space-y-3.5 pt-2">
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/80 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-700 shrink-0">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="text-[11px] text-zinc-500 uppercase font-semibold">Direct Email</div>
+                  <a href="mailto:alex.rivera.dev@email.com" class="text-xs sm:text-sm font-bold text-zinc-900 hover:text-blue-600 transition-colors">alex.rivera.dev@email.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/80 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-700 shrink-0">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-500 uppercase font-semibold">Location & Mobility</div>
+                  <div class="text-xs sm:text-sm font-bold text-zinc-900">United States • Open to Relocation & Remote</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-zinc-200/80 shadow-sm">
+                <div class="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-700 shrink-0">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-500 uppercase font-semibold">Internship Availability</div>
+                  <div class="text-xs sm:text-sm font-bold text-zinc-900">Summer 2026 (12-16 wks) & Fall 2026 Co-op</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recruiter Quick Download Resume Button -->
+            <div class="pt-2">
+              <button type="button" class="open-resume-btn w-full py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-sm transition-all">
+                <i data-lucide="file-check" class="w-4 h-4"></i>
+                <span>Open Candidate Resume One-Pager</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-zinc-200 shadow-sm">
+              <div class="mb-6">
+                <h3 class="text-xl font-bold text-zinc-900">Send a direct message</h3>
+                <p class="text-xs text-zinc-500 mt-1">Recruiter inquiries receive responses within 24 hours.</p>
+              </div>
+
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contact-name" class="block text-xs font-semibold text-zinc-700 mb-1.5">Your Name / Recruiter Name *</label>
+                    <input type="text" id="contact-name" required placeholder="e.g. Sarah Connor" class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition-all">
+                  </div>
+                  <div>
+                    <label for="contact-company" class="block text-xs font-semibold text-zinc-700 mb-1.5">Company / Organization *</label>
+                    <input type="text" id="contact-company" required placeholder="e.g. Stripe, Linear, Google" class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition-all">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="contact-email" class="block text-xs font-semibold text-zinc-700 mb-1.5">Work Email *</label>
+                  <input type="email" id="contact-email" required placeholder="recruiter@company.com" class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition-all">
+                </div>
+
+                <div>
+                  <label for="contact-role" class="block text-xs font-semibold text-zinc-700 mb-1.5">Opportunity Type</label>
+                  <select id="contact-role" class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition-all">
+                    <option value="swe-intern">Software Engineering Intern (Summer 2026)</option>
+                    <option value="fullstack-intern">Full Stack Developer Intern</option>
+                    <option value="backend-intern">Backend / Cloud Systems Intern</option>
+                    <option value="coop">Fall 2026 Co-op / Part-Time</option>
+                    <option value="other">General Engineering Chat</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="contact-message" class="block text-xs font-semibold text-zinc-700 mb-1.5">Message / Role Details *</label>
+                  <textarea id="contact-message" rows="4" required placeholder="Hi Alex, we came across your projects and would love to chat regarding our SWE internship role..." class="w-full px-3.5 py-2.5 rounded-xl border border-zinc-200 bg-zinc-50/50 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition-all resize-y"></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="w-full py-3 px-6 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-sm shadow-sm transition-all flex items-center justify-center gap-2">
+                    <span>Send Message to Alex</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-zinc-200 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded bg-zinc-900 text-white font-mono flex items-center justify-center font-bold text-[10px]">AR</span>
+        <span>© 2026 Alex Rivera. Built with HTML, Tailwind CSS & JavaScript.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-zinc-900 transition-colors">Back to top</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & TOAST ==================== -->
+
+  <!-- 1. PROJECT DEEP DIVE MODAL -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm overflow-y-auto">
+    <div class="modal-content-panel relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden my-8 max-h-[90vh] flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/70 shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono-tag bg-zinc-200 text-zinc-800 font-bold uppercase tracking-wider">Architecture Deep Dive</span>
+          <span class="text-xs text-zinc-400">|</span>
+          <span id="modal-project-title" class="text-sm font-bold text-zinc-900">Project Title</span>
+        </div>
+        <button id="close-project-modal" class="p-1 rounded-lg text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 transition-all" aria-label="Close dialog">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        
+        <!-- Project Image Banner -->
+        <div class="rounded-xl overflow-hidden border border-zinc-200 h-52 sm:h-64 bg-zinc-100">
+          <img id="modal-project-img" src="" alt="Project Visual" class="w-full h-full object-cover">
+        </div>
+
+        <div>
+          <h3 id="modal-project-subtitle" class="text-xl font-extrabold text-zinc-900 leading-snug">Subtitle</h3>
+          <p id="modal-project-desc" class="text-sm text-zinc-600 mt-2 leading-relaxed">Description</p>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Quantifiable Engineering Metrics</div>
+          <div id="modal-project-metrics" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+        </div>
+
+        <!-- Tech Stack Tags -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Technologies Used</div>
+          <div id="modal-project-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Highlights & Challenges -->
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Engineering Solutions & Challenges Overcome</div>
+          <ul id="modal-project-highlights" class="space-y-2.5 bg-zinc-50 p-4 rounded-xl border border-zinc-100"></ul>
+        </div>
+
+        <!-- System Architecture Breakdown -->
+        <div class="p-4 rounded-xl bg-zinc-900 text-white space-y-2">
+          <div class="flex items-center gap-2 text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
+            System Architecture Overview
+          </div>
+          <p id="modal-project-architecture" class="text-xs text-zinc-300 leading-relaxed font-mono"></p>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3.5 border-t border-zinc-100 bg-zinc-50/70 flex items-center justify-between shrink-0">
+        <span class="text-xs text-zinc-500">Recruiter Evaluation View</span>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-zinc-200 bg-white hover:bg-zinc-100 text-zinc-800 flex items-center gap-1.5">
+            <i data-lucide="github" class="w-3.5 h-3.5"></i> Source Code
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-white flex items-center gap-1.5">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. RECRUITER ONE-PAGER RESUME MODAL -->
+  <div id="resume-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm overflow-y-auto">
+    <div class="modal-content-panel relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden my-6 max-h-[92vh] flex flex-col">
+      
+      <!-- Resume Modal Header Bar -->
+      <div class="px-6 py-3.5 border-b border-zinc-100 flex items-center justify-between bg-zinc-50/80 shrink-0">
+        <div class="flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-zinc-700"></i>
+          <span class="text-xs sm:text-sm font-bold text-zinc-900">Alex_Rivera_Resume_2026.pdf (ATS-Optimized Preview)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="print-resume-btn" type="button" class="p-1.5 rounded-lg text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60 transition-all text-xs font-medium flex items-center gap-1">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Print / Save PDF</span>
+          </button>
+          <button id="close-resume-modal" class="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200/60 transition-all" aria-label="Close dialog">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Formatted ATS Resume Document -->
+      <div class="p-6 sm:p-10 overflow-y-auto font-sans text-zinc-900 space-y-6 bg-white selection:bg-zinc-200">
+        
+        <!-- Header -->
+        <div class="border-b border-zinc-200 pb-4 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">ALEX RIVERA</h1>
+            <p class="text-sm font-medium text-zinc-600 mt-0.5">Full Stack Software Engineering Candidate • Seeking Summer & Fall 2026 Internships</p>
+          </div>
+          <div class="text-xs text-zinc-500 space-y-0.5 text-center sm:text-right font-mono-tag">
+            <div>alex.rivera.dev@email.com • (555) 392-8192</div>
+            <div>linkedin.com/in/alex-rivera-swe • github.com/alexrivera-dev</div>
+            <div>United States • Open to Relocation & Remote</div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-900 border-b border-zinc-300 pb-1 mb-2">Education</h2>
+          <div class="flex justify-between items-baseline text-sm">
+            <div class="font-bold text-zinc-900">State University, College of Computing & Engineering</div>
+            <div class="text-xs text-zinc-600 font-mono-tag">Expected May 2026</div>
+          </div>
+          <div class="flex justify-between items-baseline text-xs text-zinc-700 mt-0.5">
+            <div>Bachelor of Science in Computer Science (Major GPA: 3.9 / 4.0)</div>
+            <div class="font-semibold text-emerald-700">Dean's Honor List</div>
+          </div>
+          <p class="text-xs text-zinc-600 mt-1">
+            <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented Software Design, Database Systems, Computer Systems & Architecture, Web Development, Distributed Systems.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-900 border-b border-zinc-300 pb-1 mb-2">Technical Skills</h2>
+          <div class="text-xs space-y-1.5 text-zinc-700">
+            <div><strong>Languages:</strong> TypeScript, JavaScript (ES6+), Python, SQL (PostgreSQL), Go, HTML5, CSS3/Tailwind.</div>
+            <div><strong>Frontend:</strong> React, Next.js 14, Zustand, Redux Toolkit, WebSockets, Responsive UI, Accessibility (a11y).</div>
+            <div><strong>Backend & Data:</strong> Node.js, Express, FastAPI, PostgreSQL, Redis, MongoDB, Prisma ORM, REST APIs, GraphQL.</div>
+            <div><strong>DevOps & Tools:</strong> Docker, Git, GitHub Actions (CI/CD), Jest, Linux/Unix, Postman, Vercel, AWS S3.</div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-900 border-b border-zinc-300 pb-1 mb-2">Technical Projects</h2>
+          
+          <!-- Project 1 -->
+          <div class="mb-3.5">
+            <div class="flex justify-between items-baseline text-xs sm:text-sm">
+              <span class="font-bold text-zinc-900">CodePulse AI — Automated Code Review & Analytics Platform</span>
+              <span class="text-xs text-zinc-500 font-mono-tag">Next.js 14, TypeScript, Node.js, PostgreSQL, Docker</span>
+            </div>
+            <ul class="list-disc list-outside ml-4 mt-1 text-xs text-zinc-600 space-y-1">
+              <li>Architected an asynchronous background analysis pipeline using BullMQ & Redis, reducing PR cycle turnaround time by 40% across 1,200+ scanned repositories.</li>
+              <li>Integrated Tree-sitter AST parser to pre-filter syntax trees before querying OpenAI embeddings, slashes API token usage costs by 62%.</li>
+              <li>Engineered interactive developer velocity dashboard with Next.js App Router, Tailwind CSS, and Server-Sent Events (SSE).</li>
+            </ul>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="mb-3.5">
+            <div class="flex justify-between items-baseline text-xs sm:text-sm">
+              <span class="font-bold text-zinc-900">PaymentFlow — Distributed Payment Settlement Engine</span>
+              <span class="text-xs text-zinc-500 font-mono-tag">Express.js, TypeScript, Redis, PostgreSQL, Stripe API</span>
+            </div>
+            <ul class="list-disc list-outside ml-4 mt-1 text-xs text-zinc-600 space-y-1">
+              <li>Developed high-throughput transaction engine capable of handling 3,500 req/sec with sub-75ms p99 response times.</li>
+              <li>Implemented distributed idempotency keys and Redis Redlock algorithms to guarantee zero double-spends in concurrent payment requests.</li>
+              <li>Built real-time merchant reconciliation dashboard with audit trail logging and automated webhook retry policies.</li>
+            </ul>
+          </div>
+
+          <!-- Project 3 -->
+          <div>
+            <div class="flex justify-between items-baseline text-xs sm:text-sm">
+              <span class="font-bold text-zinc-900">SprintSync — Real-Time Collaborative Workspace</span>
+              <span class="text-xs text-zinc-500 font-mono-tag">React, Socket.io, Node.js, MongoDB, Zustand</span>
+            </div>
+            <ul class="list-disc list-outside ml-4 mt-1 text-xs text-zinc-600 space-y-1">
+              <li>Built bi-directional multi-user markdown editor with Yjs CRDTs and WebSockets with sub-25ms synchronization latency.</li>
+              <li>Constructed fluid drag-and-drop sprint task board with optimistic UI state and instantaneous network rollback handling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Leadership & Extracurricular -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-900 border-b border-zinc-300 pb-1 mb-2">Leadership & Activities</h2>
+          <div class="flex justify-between items-baseline text-xs sm:text-sm">
+            <span class="font-bold text-zinc-900">ACM Student Chapter — Web Development Lead & Peer Mentor</span>
+            <span class="text-xs text-zinc-500 font-mono-tag">2024 – Present</span>
+          </div>
+          <p class="text-xs text-zinc-600 mt-0.5">
+            Mentored 35+ junior students in full-stack web fundamentals, Git version control, and interview prep. Organized university hackathons with 200+ participants.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Resume Modal Footer -->
+      <div class="px-6 py-3.5 border-t border-zinc-100 bg-zinc-50/80 flex items-center justify-between shrink-0">
+        <span class="text-xs text-zinc-500">Available immediately for interviews</span>
+        <button id="close-resume-btn" onclick="document.getElementById('close-resume-modal').click()" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800">
+          Done Reviewing
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-notification" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-zinc-200/90 shadow-xl opacity-0 translate-y-6 pointer-events-none max-w-sm">
+    <i id="toast-icon" data-lucide="check-circle" class="w-5 h-5 text-emerald-500 shrink-0"></i>
+    <span id="toast-message" class="text-xs font-medium text-zinc-800 leading-snug">Notification message here</span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
